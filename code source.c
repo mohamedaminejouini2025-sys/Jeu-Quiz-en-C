@@ -3,9 +3,9 @@
 #include <conio.h>//pour utiliser la fonction getch()
 #include <stdlib.h>//pour rand(), system(), exit()
 #include <string.h>//pour strcpy(), strcat(), strlen()
-#include <time.h>//pour time() utilisé dans srand()
+#include <time.h>//pour time() utilisÃ© dans srand()
 #include <windows.h>//pour manipuler la console (changer taille police)
-#define taille 100//longueur maximale des chaînes (questions, noms, réponses)
+#define taille 100//longueur maximale des chaÃ®nes (questions, noms, rÃ©ponses)
 //structure pour une question
 typedef struct
 {
@@ -14,7 +14,7 @@ typedef struct
    char RB[taille];      //choix B
    char RC[taille];      //choix C
    char RD[taille];      //choix D
-   char BR;              //la bonne répense
+   char BR;              //la bonne rÃ©pense
 }qst;
 //tableaux pour stocker les questions
 qst pre_question[taille];// questions des "tryouts"
@@ -26,11 +26,11 @@ typedef struct
     int score;//le score du joueur
 }h_s;
 h_s high_score[taille];//tableau pour enregistrer le nom du joueur et son score
-char rep;//variable utilisée pour la bonne répense
+char rep;//variable utilisÃ©e pour la bonne rÃ©pense
 char nom[taille];//le nom du joueur
 char prenom[taille];//le prenom du joueur
 int nbr_joueur =0,indice_jou=0;//nombre de joueurs et indice du joueur actuel
-//Les modules utilisées
+//Les modules utilisÃ©es
 void background();
 void help();
 void pre_questions();
@@ -43,10 +43,10 @@ void nom_complet(int i);
 int start();
 void reset_record();
 void show_record();
-//affichage du l’interface principale
+//affichage du lâ€™interface principale
 void background()
 {
-    system("cls");//efface l’écran
+    system("cls");//efface lâ€™Ã©cran
     system("color E0");//couleur de la console
     printf("\t\t\t\t\t QUIZ CRAFTED IN C\n");
     printf("\t\t\t**************************************************\n"
@@ -62,7 +62,7 @@ void background()
            "\t\t\t**************************************************\n"
            "your choice : ");
 }
-//page d’aide
+//page dâ€™aide
 void help()
 {
     system("cls");
@@ -84,7 +84,7 @@ void help()
            " press any key to return to the main page");
     getch();
 }
-//**la base des donées questions**
+//**la base des donÃ©es questions**
 //questions des tryouts
 void pre_questions()
 {
@@ -182,11 +182,11 @@ void questions()
    strcpy(question[2].RD,"Germany");
    question[2].BR='B';
 
-   strcpy(question[3].Q,"What is the freezing point of water in °C ?");
-   strcpy(question[3].RA,"0°C");
-   strcpy(question[3].RB,"-10°C");
-   strcpy(question[3].RC,"100°C");
-   strcpy(question[3].RD,"37°C");
+   strcpy(question[3].Q,"What is the freezing point of water in Â°C ?");
+   strcpy(question[3].RA,"0Â°C");
+   strcpy(question[3].RB,"-10Â°C");
+   strcpy(question[3].RC,"100Â°C");
+   strcpy(question[3].RD,"37Â°C");
    question[3].BR='A';
 
    strcpy(question[4].Q,"When did the WW1 end ?");
@@ -238,14 +238,14 @@ void questions()
    strcpy(question[10].RD,"Ken Thompson");
    question[10].BR='B';
 
-   strcpy(question[11].Q,"Which athlete still holds (in 2025) the men’s 100 meters world record ?");
+   strcpy(question[11].Q,"Which athlete still holds (in 2025) the menâ€™s 100 meters world record ?");
    strcpy(question[11].RA,"Carl Lewis");
    strcpy(question[11].RB,"Usain Bolt");
    strcpy(question[11].RC,"Justin Gatlin");
    strcpy(question[11].RD,"Yohan Blake");
    question[11].BR='B';
 
-   strcpy(question[12].Q,"Which city is located on two continents — Europe and Asia ?");
+   strcpy(question[12].Q,"Which city is located on two continents â€” Europe and Asia ?");
    strcpy(question[12].RA,"Moscow");
    strcpy(question[12].RB,"Istanbul");
    strcpy(question[12].RC,"Cairo");
@@ -365,10 +365,10 @@ void questions()
    question[28].BR='B';
 
    strcpy(question[29].Q,"What is the boiling point of water?");
-   strcpy(question[29].RA,"50°C");
-   strcpy(question[29].RB,"90°C");
-   strcpy(question[29].RC,"100°C");
-   strcpy(question[29].RD,"120°C");
+   strcpy(question[29].RA,"50Â°C");
+   strcpy(question[29].RB,"90Â°C");
+   strcpy(question[29].RC,"100Â°C");
+   strcpy(question[29].RD,"120Â°C");
    question[29].BR='C';
 
    strcpy(question[30].Q,"What is the longest river in the world?");
@@ -448,7 +448,7 @@ void quit ()
     printf("the game has been ended by you :) \n");
     system("exit");//ferme la console
 }
-//partie "tryouts" : le joueur doit répondre correctement à 2 questions pour passer
+//partie "tryouts" : le joueur doit rÃ©pondre correctement Ã  2 questions pour passer
 int tryouts ()
 {
     system("cls");
@@ -458,7 +458,7 @@ int tryouts ()
     int tab_num_quest[10];//les indices des questions de sens croissant (1,2,3,....)
     for (int i=0; i<10;i++){//remplir le tableau
       tab_num_quest[i]=i;}
-    //mélanger les indices pour choisir des questions aléatoires (5,7,29,...)
+    //mÃ©langer les indices pour choisir des questions alÃ©atoires (5,7,29,...)
     for (int i=9;i>0;i--){
       k= rand() % (i + 1);
       temp = tab_num_quest[i];
@@ -471,16 +471,16 @@ int tryouts ()
         printf("Question %d : %s \n",question_pose+1,pre_question[indice_Q].Q);
         printf("A) %s   \tB) %s   \nC) %s   \tD) %s\n",pre_question[indice_Q].RA,pre_question[indice_Q].RB,pre_question[indice_Q].RC,pre_question[indice_Q].RD);
         printf("YOUR ANSWER : ");
-        scanf("%s",&rep);//lire un caractère
+        scanf("%s",&rep);//lire un caractÃ¨re
         rep=toupper(rep);
         if (rep == pre_question[indice_Q].BR)
           {
               printf("CORRECT :)\n ");
-              bonne_repense++;//compteur des bonnes réponses
+              bonne_repense++;//compteur des bonnes rÃ©ponses
               }
         else
            printf("WRONG :( \n");
-     question_pose++; //question_pose est un conteur des question posées
+     question_pose++; //question_pose est un conteur des question posÃ©es
      indice_T++;
     }while (question_pose<2);
     return bonne_repense;
@@ -492,7 +492,7 @@ int game()
       time_t t;
       srand((unsigned) time(&t));
       int indice_T=0,indice_Q,temp,k,question_pose=0,gain=0;//s=score
-                            //les autres variables ont la méme utilisation que le module pre_start
+                            //les autres variables ont la mÃ©me utilisation que le module pre_start
       int tab_num_quest[40];
       for (int i=0; i<40;i++){
         tab_num_quest[i]=i;}
@@ -514,7 +514,7 @@ int game()
         if (rep == question[indice_Q].BR)
           {
               printf("CORRECT :)\n ");
-              gain=gain+100;//chaque bonne réponse = 100k
+              gain=gain+100;//chaque bonne rÃ©ponse = 100k
           }
         else
            printf("WRONG :( \n");
@@ -544,7 +544,7 @@ int game()
            printf(" press any key to return to the main page");}
     return gain;//retourne le score final
 }
-//saisie du nom et prénom
+//saisie du nom et prÃ©nom
 void nom_player()
 {
     do{
@@ -556,7 +556,7 @@ void nom_player()
     scanf("%s",prenom);
     }while (strlen(prenom)>taille);
 }
-//concatène nom et prénom pour nom compléte du joueur
+//concatÃ¨ne nom et prÃ©nom pour nom complÃ©te du joueur
 void nom_complet(int i)
 {
     strcpy(high_score[i].full_name, nom);
@@ -568,14 +568,14 @@ int start()
 {
     nom_player();
     int rec=tryouts();
-    if (rec==2)//si réussi
+    if (rec==2)//si rÃ©ussi
         {
         printf("\n\nYOU PASSED THE TRYOUTS :)\n"
                "press any key to continue");
         getch();
         high_score[indice_jou].score=game();//enregistrement du score du joueur actuel
         nom_complet(indice_jou);//enregistrement du nom du joueur actuel
-        indice_jou++;// pour préparé une caisse du joueur suivant
+        indice_jou++;// pour prÃ©parÃ© une caisse du joueur suivant
         nbr_joueur++;
         getch();
         return high_score[indice_jou].score;}//retourner le score du joueur actuel
@@ -584,15 +584,15 @@ int start()
                " THANKS FOR PLAYING MAYBE NEXT TIME  \n\n"
                "press any key to return to the main page");
                getch();
-               return 0;}//joueur échoué
+               return 0;}//joueur Ã©chouÃ©
 }
-//réinitialiser les scores
+//rÃ©initialiser les scores
 void reset_record()
 {
     system("cls");
     for (int i=0;i<nbr_joueur;i++)
     {
-        high_score[i].score=0;//tous les scores à 0
+        high_score[i].score=0;//tous les scores Ã  0
     }
     printf("\t\t\t*******************************************\n"
            "\t\t\t       The record has been reseted\n"
@@ -600,12 +600,12 @@ void reset_record()
            "press any key to return to the main page");
     getch();
 }
-//afficher le joueur avec le score le plus élevé
+//afficher le joueur avec le score le plus Ã©levÃ©
 void show_record()
 {
     system("cls");
-    int h_sc=0;//variable pour le plus grand score marqué
-    char f_nm[taille];//variable pour le nom du joueur qui à marqué le plus grand score
+    int h_sc=0;//variable pour le plus grand score marquÃ©
+    char f_nm[taille];//variable pour le nom du joueur qui Ã  marquÃ© le plus grand score
     for (int i=0 ; i<nbr_joueur;i++)
     {
         if (high_score[i].score>=h_sc){
@@ -635,14 +635,14 @@ void main()
      do{
      background();//affiche menu
      scanf("%s",&ch);
-     ch=toupper(ch);//cette fonction permet d’accepter la saisie de l’utilisateur en majuscules ou en minuscules
+     ch=toupper(ch);//cette fonction permet dâ€™accepter la saisie de lâ€™utilisateur en majuscules ou en minuscules
      switch(ch)
      {
-     case 'H' : help(); break;//page d’aide
+     case 'H' : help(); break;//page dâ€™aide
      case 'S' : start(); break;//lancer le jeu
      case 'Q' : quit(); break;//quitter le jeu
-     case 'V' : show_record(); break;//afficher le joueur avec le score le plus élevé
-     case 'R' : reset_record();break;//réinitialiser les scores
+     case 'V' : show_record(); break;//afficher le joueur avec le score le plus Ã©levÃ©
+     case 'R' : reset_record();break;//rÃ©initialiser les scores
      }
-     }while (ch!='Q'); //répéter tant que le joueur ne quitte pas et son choix est invalable
+     }while (ch!='Q'); //rÃ©pÃ©ter tant que le joueur ne quitte pas et son choix est invalable
 }
